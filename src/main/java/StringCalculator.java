@@ -2,11 +2,7 @@ import java.math.BigDecimal;
 
 public class StringCalculator {
 
-    private static final String TO_MUCH_ARGUMENTS = "To much arguments";
-
     public String add(final String input) {
-
-        long count = input.chars().filter(ch -> ch == ',').count();
 
         if (input.length() == 0) return "0";
 
