@@ -55,4 +55,12 @@ public class StringCalculatorTest {
         assertEquals("Should return the string: Number expected but '\\n' found at position 2.",
                 "Number expected but '\\n' found at position 2.", stringCalculator.add(input));
     }
+
+    @Test
+    public void add_should_return_error_message_when_missing_last_number() {
+        String input = "1,2,";
+
+        assertEquals("Should return the string: Number expected but EOF found.",
+                "Number expected but EOF found.", stringCalculator.add(input));
+    }
 }
