@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 public class StringCalculator {
 
     private static final String TO_MUCH_ARGUMENTS = "To much arguments";
@@ -10,12 +12,13 @@ public class StringCalculator {
         else if(count > 2) return TO_MUCH_ARGUMENTS;
 
         String[] numbers = input.split(",");
-        Integer result = 0;
+        BigDecimal result = new BigDecimal(0);
 
         for(String number: numbers) {
-            result += Integer.parseInt(number);
+            result = result.add(new BigDecimal(number));
         }
 
+        System.out.println(result);
         return result.toString();
     }
 }
