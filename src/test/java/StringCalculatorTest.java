@@ -63,4 +63,12 @@ public class StringCalculatorTest {
         assertEquals("Should return the string: Number expected but EOF found.",
                 "Number expected but EOF found.", stringCalculator.add(input));
     }
+
+    @Test
+    public void add_should_be_able_to_use_custom_separator() {
+        String input = "//;\n1;2";
+
+        assertEquals("Should return the string: 3",
+                "3", stringCalculator.add(input));
+    }
 }
