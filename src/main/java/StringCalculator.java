@@ -9,7 +9,6 @@ public class StringCalculator {
         long count = input.chars().filter(ch -> ch == ',').count();
 
         if (input.length() == 0) return "0";
-        else if(count > 2) return TO_MUCH_ARGUMENTS;
 
         String[] numbers = input.split(",");
         BigDecimal result = new BigDecimal(0);
