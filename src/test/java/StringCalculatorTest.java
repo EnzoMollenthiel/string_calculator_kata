@@ -18,4 +18,11 @@ public class StringCalculatorTest {
 
         assertEquals("Should return the string: 6", "6", stringCalculator.add(imput));
     }
+
+    @Test
+    public void add_should_take_at_most_3_arguments() {
+        String imput = "1,2,3,4";
+
+        assertEquals("Should return the string: To much arguments", "To much arguments", stringCalculator.add(imput));
+    }
 }
