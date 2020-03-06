@@ -13,16 +13,14 @@ public class StringCalculator {
             return "Number expected but EOF found.";
 
         String numbersString = input;
-        String separators = "\n";
+        String separators = ",|\n";
 
         if(input.substring(0,2).equals("//")) {
-            separators = input.substring(2,4);
-            separators = separators.charAt(0) + "|" + separators.charAt(1);
-            numbersString = input.substring(4, input.length());
+            separators = new StringBuilder(input.substring(2,4)).insert(1, "|").toString();
+            numbersString = input.substring(4);
         }
 
-        numbersString = numbersString.replaceAll("["+ separators + "]", ",");
-        String[] numbers = numbersString.split(",");
+        String[] numbers = numbersString.split(separators);
 
         BigDecimal result = new BigDecimal(0);
 
