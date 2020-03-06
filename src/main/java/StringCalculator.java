@@ -12,7 +12,16 @@ public class StringCalculator {
         else if (input.charAt(input.length() - 1) == ',')
             return "Number expected but EOF found.";
 
-        String numbersString = input.replaceAll("\n",",");
+        String numbersString = input;
+        String separators = "\n";
+
+        if(input.substring(0,2).equals("//")) {
+            separators = input.substring(2,4);
+            separators = separators.charAt(0) + "|" + separators.charAt(1);
+            numbersString = input.substring(4, input.length());
+        }
+
+        numbersString = numbersString.replaceAll("["+ separators + "]", ",");
         String[] numbers = numbersString.split(",");
 
         BigDecimal result = new BigDecimal(0);
