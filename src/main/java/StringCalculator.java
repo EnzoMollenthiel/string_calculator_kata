@@ -18,7 +18,6 @@ public class StringCalculator {
             result = result.add(new BigDecimal(number));
         }
 
-        System.out.println(result);
         return result.toString();
     }
 }

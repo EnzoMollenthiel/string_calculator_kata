@@ -21,10 +21,10 @@ public class StringCalculatorTest {
 
 
     @Test
-    public void add_should_take_at_most_3_arguments() {
+    public void add_should_take_any_number_of_arguments() {
         String input = "1,2,3,4";
 
-        assertEquals("Should return the string: To much arguments", "To much arguments", stringCalculator.add(input));
+        assertEquals("Should return the string: 10", "10", stringCalculator.add(input));
     }
 
     @Test
