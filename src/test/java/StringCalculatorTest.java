@@ -25,4 +25,11 @@ public class StringCalculatorTest {
 
         assertEquals("Should return the string: To much arguments", "To much arguments", stringCalculator.add(imput));
     }
+
+    @Test
+    public void add_should_return_0_if_the_passed_arg_is_an_empty_string() {
+        String imput = "";
+
+        assertEquals("Should return the string: 0", "0", stringCalculator.add(imput));
+    }
 }
