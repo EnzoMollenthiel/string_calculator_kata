@@ -47,4 +47,12 @@ public class StringCalculatorTest {
 
         assertEquals("Should return the string: 3.2", "3.2", stringCalculator.add(input));
     }
+
+    @Test
+    public void add_should_return_error_message_on_unexpected_linefeed() {
+        String input = "1,\n2";
+
+        assertEquals("Should return the string: Number expected but '\\n' found at position 3.",
+                "Number expected but '\\n' found at position 3.", stringCalculator.add(input));
+    }
 }
