@@ -2,13 +2,13 @@ import java.math.BigDecimal;
 
 public class StringCalculator {
 
-    public String add(String input) {
+    public String add(final String input) {
 
         if (input.length() == 0) return "0";
 
-        input = input.replaceAll("\n",",");
+        String numbersString = input.replaceAll("\n",",");
 
-        String[] numbers = input.split(",");
+        String[] numbers = numbersString.split(",");
         BigDecimal result = new BigDecimal(0);
 
         for(String number: numbers) {
